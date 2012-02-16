@@ -1,13 +1,16 @@
 require 'spec_helper'
 
 describe "UserPages" do
+
+  before { visit signup_path }
+
   describe "Signup Page" do
-
-    before { visit signup_path }
-
+    
     subject { page }
+    
+    let(:heading) {'Sign Up'}
+    let(:page_title) { 'Sign Up' }
 
-    it { should have_selector('h1', text: 'Sign Up') }
-    it { should have_selector('title', text: full_title('Sign Up')) }
+    it_should_behave_like "all static pages"
   end
 end
