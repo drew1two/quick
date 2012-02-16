@@ -2,7 +2,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: test
+  database: quick_test
   pool: 5
   username: root
   password: ilkataa12 
@@ -14,7 +14,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: test
+  database: quick_test
   pool: 5
   username: root
   password: ilkataa12 
