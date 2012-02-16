@@ -6,53 +6,41 @@ describe "Pages" do
 
   describe "Home page" do
 
-    it "should have the h1 'Home'" do
-      visit '/pages/home'
-      page.should have_selector('h1', :text => 'Home')
-    end
+    before { visit root_path }
+    
+    subject { page }
 
-    it "should have the title 'Home'" do
-      visit '/pages/home'
-      page.should have_selector('title', :text => "Home @ #{base_title}")
-    end
+    it { should have_selector('h1', text: 'Home') }
+    it { should have_selector('title', text: full_title('Home')) }
   end
 
   describe "Privacy page" do
 
-    it "should have the h1 'Privacy'" do
-      visit '/pages/privacy'
-      page.should have_selector('h1', :text => 'Privacy')
-    end
+    before { visit privacy_path }
+    
+    subject { page }
 
-    it "should have the title 'Privacy'" do
-      visit '/pages/privacy'
-      page.should have_selector('title', :text => "Privacy @ #{base_title}")
-    end
+    it { should have_selector('h1', text: 'Privacy') }
+    it { should have_selector('title', text: full_title('Privacy')) }
   end
 
   describe "About page" do
 
-    it "should have the h1 'About Us'" do
-      visit '/pages/about'
-      page.should have_selector('h1', :text => 'About Us')
-    end
+    before { visit about_path }
+    
+    subject { page }
 
-    it "should have the title 'About Us'" do
-      visit '/pages/about'
-      page.should have_selector('title', :text => "About Us @ #{base_title}")
-    end
+    it { should have_selector('h1', text: 'About Us') }
+    it { should have_selector('title', text: full_title('About Us')) }
   end
 
   describe "Contact page" do
 
-    it "should have the h1 'Contact Us'" do
-      visit '/pages/contact'
-      page.should have_selector('h1', :text => 'Contact')
-    end
+    before { visit contact_path }
+    
+    subject { page }
 
-    it "should have the title 'Contact Us'" do
-      visit '/pages/contact'
-      page.should have_selector('title', :text => "Contact Us @ #{base_title}")
-    end
+    it { should have_selector('h1', text: 'Contact Us') }
+    it { should have_selector('title', text: full_title('Contact Us')) }
   end
 end

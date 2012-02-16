@@ -1,11 +1,16 @@
 Quick::Application.routes.draw do
-  get "pages/home"
+  
+  get "users/new"
 
-  get "pages/about"
+  match '/signup', to: 'users#new'
 
-  get "pages/contact"
+  root to: 'pages#home'
+  
+  match '/about', to: 'pages#about'
 
-  get "pages/privacy"
+  match '/contact', to: 'pages#contact'
+
+  match '/privacy', to: 'pages#privacy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
