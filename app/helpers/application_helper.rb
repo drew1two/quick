@@ -16,7 +16,7 @@ module ApplicationHelper
   # Returns a div wrapper around the error fields so we can ammend the styling of these ugly fields.
   def error_field_div_wrapper(error_field,cssField,is_error)
     if !is_error.eql?(0)
-      returnValue = ("<div class=\"#{cssField}\">#{error_field}</div>").html_safe
+      returnValue = content_tag(:div, error_field, class: "#{cssField}")
       returnValue 
     else
       error_field
