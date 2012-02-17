@@ -9,6 +9,18 @@ describe "Pages" do
   
   end
 
+  describe "Signup Page" do
+
+    before { visit signup_path }
+    
+    subject { page }
+    
+    let(:heading) {'Sign Up'}
+    let(:page_title) { 'Sign Up' }
+
+    it_should_behave_like "all static pages"
+  end
+
   describe "Home page" do
 
     before { visit root_path }
@@ -56,6 +68,19 @@ describe "Pages" do
 
     it_should_behave_like "all static pages"
   end
+
+  describe "Terms page" do
+
+    before { visit terms_path }
+    
+    subject { page }
+    
+    let(:heading) {'Terms of Service'}
+    let(:page_title) { 'Terms of Service' }
+
+    it_should_behave_like "all static pages"
+  end
+
   it "should have the right links on the layout" do
     visit root_path
     
@@ -69,5 +94,7 @@ describe "Pages" do
     page.should have_selector 'title', text: full_title('Contact Us')
     click_link "Privacy"
     page.should have_selector 'title', text: full_title('Privacy')
+    click_link "Terms"
+    page.should have_selector 'title', text: full_title('Terms of Service')
   end
 end

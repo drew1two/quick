@@ -1,6 +1,6 @@
 Quick::Application.routes.draw do
   
-  get "users/new"
+  resources :users
 
   match '/signup', to: 'users#new'
 
@@ -11,6 +11,8 @@ Quick::Application.routes.draw do
   match '/contact', to: 'pages#contact'
 
   match '/privacy', to: 'pages#privacy'
+
+  match '/terms', to: 'pages#terms'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
